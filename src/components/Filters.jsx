@@ -17,7 +17,7 @@ const Filters = ({ setFilter }) => {
     };
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-5 justify-center gap-5 items-end p-5">
+        <div className="grid grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-5">
             <div>
                 <label>Category:</label>
                 <input
@@ -58,7 +58,7 @@ const Filters = ({ setFilter }) => {
                     onChange={(e) => setMaxPrice(e.target.value)}
                 />
             </div>
-            <button className='btn btn-md btn-secondary' onClick={handleFilter}>Apply Filters</button>
+            <button className='btn btn-md bg-secondary' onClick={handleFilter}>Apply Filters</button>
         </div>
     );
 };

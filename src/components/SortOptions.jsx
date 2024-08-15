@@ -11,7 +11,7 @@ const SortOptions = ({ setSort }) => {
     };
 
     return (
-        <div className="flex justify-center gap-5 items-end p-5">
+        <div className="flex border shadow-lg  my-5 justify-center gap-5 items-end p-5">
             <div>
                 <label>Sort By:</label>
                 <select className='input-md	input-secondary w-full max-w-xs mr-5' value={sortField} onChange={(e) => setSortField(e.target.value)}>
