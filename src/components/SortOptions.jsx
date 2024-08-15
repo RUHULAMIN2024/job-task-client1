@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import  { useState } from 'react';
 
 const SortOptions = ({ setSort }) => {
@@ -9,10 +11,10 @@ const SortOptions = ({ setSort }) => {
     };
 
     return (
-        <div className="sort-options">
+        <div className="flex justify-center gap-5 items-end p-5">
             <div>
                 <label>Sort By:</label>
-                <select value={sortField} onChange={(e) => setSortField(e.target.value)}>
+                <select className='input-md	input-secondary w-full max-w-xs mr-5' value={sortField} onChange={(e) => setSortField(e.target.value)}>
                     <option value="">Select</option>
                     <option value="price">Price</option>
                     <option value="createdAt">Date Added</option>
@@ -20,15 +22,19 @@ const SortOptions = ({ setSort }) => {
             </div>
             <div>
                 <label>Order:</label>
-                <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+                <select className='input-md	input-secondary w-full max-w-xs mr-5' value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                     <option value="">Select</option>
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
                 </select>
             </div>
-            <button onClick={handleSort}>Sort</button>
+            <button className='btn-md btn-secondary btn' onClick={handleSort}>Sort</button>
         </div>
     );
 };
 
+
+SortOptions.propTypes = {
+    setSort: PropTypes.func.isRequired,
+};
 export default SortOptions;

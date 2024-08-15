@@ -6,7 +6,6 @@ const Filters = ({ setFilter }) => {
     const [brand, setBrand] = useState('');
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
-
     const handleFilter = () => {
         const filter = {};
         if (category) filter.category = category;
@@ -14,13 +13,15 @@ const Filters = ({ setFilter }) => {
         if (minPrice) filter.minPrice = minPrice;
         if (maxPrice) filter.maxPrice = maxPrice;
         setFilter(filter);
+
     };
 
     return (
-        <div className="filters">
+        <div className="grid grid-cols-2 md:grid-cols-5 justify-center gap-5 items-end p-5">
             <div>
                 <label>Category:</label>
                 <input
+                className='input-md	input-secondary w-full max-w-xs mr-5'
                     type="text"
                     placeholder="Category"
                     value={category}
@@ -30,6 +31,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Brand:</label>
                 <input
+                className='input-md	input-secondary w-full max-w-xs mr-5'
                     type="text"
                     placeholder="Brand"
                     value={brand}
@@ -39,6 +41,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Min Price:</label>
                 <input
+                className='input-md	input-secondary w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Min Price"
                     value={minPrice}
@@ -48,13 +51,14 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Max Price:</label>
                 <input
+                className='input-md	input-secondary w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Max Price"
                     value={maxPrice}
                     onChange={(e) => setMaxPrice(e.target.value)}
                 />
             </div>
-            <button onClick={handleFilter}>Apply Filters</button>
+            <button className='btn btn-md btn-secondary' onClick={handleFilter}>Apply Filters</button>
         </div>
     );
 };

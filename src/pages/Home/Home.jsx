@@ -6,12 +6,16 @@ import Container from "../../components/Shared/Container";
 import SearchBar from "../../components/SearchBar";
 import Filters from "../../components/Filters";
 import SortOptions from "../../components/SortOptions";
+import PropTypes from 'prop-types';
+
+
 
 const Home = () => {
     const [products, setproducts] = useState([])
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState({});
     const [sort, setSort] = useState({});
+    console.log(filter,)
 
     const [itemPerPage, setItemPerPage] = useState(5)
     const [currentPage, setCurrentPage] = useState(1)
@@ -21,11 +25,16 @@ const Home = () => {
     for (let i = 1; i <= pageCount; i++) {
         pages.push(i);
     }
+
+
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${currentPage}&size=${itemPerPage}`)
+        fetch(`http://localhost:5000/products?page=${currentPage}&size=${itemPerPage}&search=${search}&filter=${JSON.stringify(filter)}&sort=${JSON.stringify(sort)} `)
             .then(res => res.json())
-            .then(products => setproducts(products?.data))
-    }, [currentPage, itemPerPage])
+            .then(data => {
+                setproducts(data?.data)
+                setCount(data.count)
+            })
+    }, [currentPage, itemPerPage, search, filter, sort])
     useEffect(() => {
         fetch(`http://localhost:5000/count`)
             .then(res => res.json())
@@ -49,11 +58,13 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
 
-            <div className='pt-28 min-h-[calc(100vh-68px)]'>
-                <div>
-                    <SearchBar setSearch={setSearch} />
-                    <Filters setFilter={setFilter} />
-                    <SortOptions setSort={setSort} />
+            <div className='pt-32 min-h-[calc(100vh-68px)]'>
+                <div className="text-lg bg-base-200">
+                    <Container>
+                        <SearchBar setSearch={setSearch} />
+                        <Filters setFilter={setFilter} />
+                        <SortOptions setSort={setSort} />
+                    </Container>
                 </div>
                 <Container>
                     <div className="grid gap-8 justify-between items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -63,7 +74,7 @@ const Home = () => {
                             ))
                         }
                     </div>
-                    <div>
+                    <div className="overflow-x-auto">
                         <ul className="flex items-center my-5 gap-2 justify-center">
                             <li className='cursor-pointer px-3 py-2 text-gray-700 hover:text-gray-900' onClick={handlePrev}>Prev</li>
                             {pages.map(page => (
@@ -90,3 +101,15 @@ const Home = () => {
 };
 
 export default Home;
+
+Home.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object),
+    count: PropTypes.number,
+    itemPerPage: PropTypes.number,
+    currentPage: PropTypes.number,
+    pageCount: PropTypes.number,
+    pages: PropTypes.arrayOf(PropTypes.number),
+    handleItemPerPage: PropTypes.func,
+    handlePrev: PropTypes.func,
+    handleNext: PropTypes.func,
+}
