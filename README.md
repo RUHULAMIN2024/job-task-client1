@@ -33,9 +33,9 @@ This is the frontend part of the Pagination built with React.js.
     npm install
 
 3. Set up Firebase:
-Create a Firebase project in the Firebase Console.
-Enable Authentication (Google and Email/Password).
-Copy the Firebase configuration and replace the content
+- Create a Firebase project in the Firebase Console.
+- Enable Authentication (Google and Email/Password).
+- Copy the Firebase configuration and replace the content
 
 4. Run the project:
     ```bash
