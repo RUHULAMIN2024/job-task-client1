@@ -10,9 +10,9 @@ const SearchBar = ({ setSearch }) => {
     };
 
     return (
-        <div className="flex justify-center items-center p-5 shadow-lg  border my-5 text-blue-600">
+        <div className="flex bg-base-200 justify-center items-center p-3 shadow-lg  border my-5 text-blue-600">
             <input
-            className='input-md	input-secondary w-full max-w-xs mr-5'
+            className='input	input-secondary w-full max-w-xs mr-5'
                 type="text"
                 placeholder="Search products..."
                 value={keyword}

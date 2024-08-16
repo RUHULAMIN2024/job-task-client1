@@ -59,7 +59,7 @@ const Home = () => {
             <Navbar></Navbar>
 
             <div className='pt-32 min-h-[calc(100vh-68px)]'>
-                <div className="text-lg py-5 bg-base-200">
+                <div className="text-lg py-3">
                     <Container>
                         <SearchBar setSearch={setSearch} />
                         <Filters setFilter={setFilter} />

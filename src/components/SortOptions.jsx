@@ -11,10 +11,10 @@ const SortOptions = ({ setSort }) => {
     };
 
     return (
-        <div className="flex border shadow-lg  my-5 justify-center gap-5 items-end p-5">
+        <div className="flex border bg-base-200 shadow-lg  my-5 justify-center gap-5 items-end p-3">
             <div>
                 <label>Sort By:</label>
-                <select className='input-md	input-secondary w-full max-w-xs mr-5' value={sortField} onChange={(e) => setSortField(e.target.value)}>
+                <select className=' select	input-secondary w-full max-w-xs mr-5' value={sortField} onChange={(e) => setSortField(e.target.value)}>
                     <option value="">Select</option>
                     <option value="price">Price</option>
                     <option value="createdAt">Date Added</option>
@@ -22,7 +22,7 @@ const SortOptions = ({ setSort }) => {
             </div>
             <div>
                 <label>Order:</label>
-                <select className='input-md	input-secondary w-full max-w-xs mr-5' value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+                <select className='select input-secondary w-full max-w-xs mr-5' value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                     <option value="">Select</option>
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>

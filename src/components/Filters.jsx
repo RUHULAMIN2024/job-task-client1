@@ -17,11 +17,11 @@ const Filters = ({ setFilter }) => {
     };
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-5">
+        <div className="grid bg-base-200 grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-3">
             <div>
                 <label>Category:</label>
                 <input
-                className='input-md	input-secondary w-full max-w-xs mr-5'
+                className='input	input-secondary w-full max-w-xs mr-5'
                     type="text"
                     placeholder="Category"
                     value={category}
@@ -31,7 +31,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Brand:</label>
                 <input
-                className='input-md	input-secondary w-full max-w-xs mr-5'
+                className='input	input-secondary w-full max-w-xs mr-5'
                     type="text"
                     placeholder="Brand"
                     value={brand}
@@ -41,7 +41,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Min Price:</label>
                 <input
-                className='input-md	input-secondary w-full max-w-xs mr-5'
+                className='input	input-secondary w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Min Price"
                     value={minPrice}
@@ -51,7 +51,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Max Price:</label>
                 <input
-                className='input-md	input-secondary w-full max-w-xs mr-5'
+                className='input	input-secondary w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Max Price"
                     value={maxPrice}
