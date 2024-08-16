@@ -24,7 +24,7 @@ This is the frontend part of the Pagination built with React.js.
 
 1. Clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/RUHULAMIN2024/job-task-client1
    cd product-management-frontend
 
 
