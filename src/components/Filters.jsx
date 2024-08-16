@@ -20,23 +20,24 @@ const Filters = ({ setFilter }) => {
         <div className="grid bg-base-200 grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-3">
             <div>
                 <label>Category:</label>
-                <input
-                className='input	input-secondary w-full max-w-xs mr-5'
-                    type="text"
-                    placeholder="Category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                />
+                <select className=' select	input-secondary w-full max-w-xs mr-5' value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="electronics"> electronics</option>
+                    <option value="computers"> computers</option>
+                    <option value="footwear"> footwear</option>
+                    <option value="gaming"> gaming</option>
+                </select>
             </div>
             <div>
                 <label>Brand:</label>
-                <input
-                className='input	input-secondary w-full max-w-xs mr-5'
-                    type="text"
-                    placeholder="Brand"
-                    value={brand}
-                    onChange={(e) => setBrand(e.target.value)}
-                />
+                <select className=' select	input-secondary w-full max-w-xs mr-5' value={brand} onChange={(e) => setBrand(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="Apple"> Apple</option>
+                    <option value="Sony"> Sony </option>
+                    <option value="Dell"> Dell</option>
+                    <option value="Samsung"> Samsung</option>
+                    <option value="Nike"> Nike</option>
+                </select>
             </div>
             <div>
                 <label>Min Price:</label>

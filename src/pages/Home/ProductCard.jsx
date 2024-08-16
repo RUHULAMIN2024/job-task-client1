@@ -1,10 +1,13 @@
 import { GiPriceTag } from "react-icons/gi";
 import { TbCategory } from "react-icons/tb";
 import { MdOutlineDateRange } from "react-icons/md";
+import { IoMdTimer } from "react-icons/io";
+import { PiBrandy } from "react-icons/pi";
+
 import PropTypes from 'prop-types';
 
 const ProductCard = ({product}) => {
-    const { name,image, description, price, category, ratings,creationDate} = product
+    const { name,image, brand, description, price, category, ratings, createdAt} = product
     return (
         <div>
             <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
@@ -49,9 +52,14 @@ const ProductCard = ({product}) => {
                         {description}
                     </p>
                     <div className=" items-center justify-between flex mt-2">
-                       <h4 className="flex gap-1 items-center"><TbCategory></TbCategory> {category}</h4>
-                       <h4 className="flex gap-1 items-center"><MdOutlineDateRange></MdOutlineDateRange>{`${creationDate?.slice(0,10)} ${creationDate?.slice(11,creationDate?.length)}`}</h4>
+                       <h4 className="flex gap-1 items-center"> <TbCategory></TbCategory>Category: {category}</h4>
+                       <h4 className="flex gap-1 items-center"> <PiBrandy></PiBrandy> Brand: {brand}</h4>
+        
 
+                    </div>
+                    <div className=" items-center justify-between flex mt-2">
+                <h4 className="flex gap-1 items-center"><MdOutlineDateRange> </MdOutlineDateRange> Date: {`${createdAt?.slice(0,10)}`}</h4>
+                <h4 className="flex gap-1 items-center"><IoMdTimer> </IoMdTimer> Time:{`${createdAt?.slice(11,createdAt?.length)}`}</h4>
                     </div>
                 </div>
                 <div className="p-6 pt-3">
@@ -78,7 +86,8 @@ ProductCard.propTypes = {
         price: PropTypes.number.isRequired,
         category: PropTypes.string.isRequired,
         ratings: PropTypes.number.isRequired,
-        creationDate: PropTypes.string.isRequired,
+        createdAt: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
     }).isRequired,
 
 }
