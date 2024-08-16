@@ -17,7 +17,7 @@ const Home = () => {
     const [sort, setSort] = useState({});
     console.log(filter,)
 
-    const [itemPerPage, setItemPerPage] = useState(5)
+    const [itemPerPage, setItemPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(1)
     const [count, setCount] = useState();
     const pageCount = Math.ceil(count / itemPerPage);
@@ -28,18 +28,14 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${currentPage}&size=${itemPerPage}&search=${search}&filter=${JSON.stringify(filter)}&sort=${JSON.stringify(sort)} `)
+        fetch(`https://pagination-server-eight.vercel.app/products?page=${currentPage}&size=${itemPerPage}&search=${search}&filter=${JSON.stringify(filter)}&sort=${JSON.stringify(sort)} `)
             .then(res => res.json())
             .then(data => {
                 setproducts(data?.data)
                 setCount(data.count)
             })
     }, [currentPage, itemPerPage, search, filter, sort])
-    useEffect(() => {
-        fetch(`http://localhost:5000/count`)
-            .then(res => res.json())
-            .then(data => setCount(data.count))
-    }, [])
+    
 
     const handleItemPerPage = (e) => {
         setItemPerPage(parseInt(e.target.value))
@@ -85,8 +81,8 @@ const Home = () => {
                             <li className='cursor-pointer px-3 py-2 text-gray-700 hover:text-gray-900' onClick={handleNext}>Next</li>
                             <li>
                                 <select onChange={handleItemPerPage} name={itemPerPage} id="">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
+                                    <option value="5">9</option>
+                                    <option value="10">12</option>
                                     <option value="15">15</option>
                                     <option value="20">20</option>
                                 </select>

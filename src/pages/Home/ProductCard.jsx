@@ -6,14 +6,14 @@ import { PiBrandy } from "react-icons/pi";
 
 import PropTypes from 'prop-types';
 
-const ProductCard = ({product}) => {
-    const { name,image, brand, description, price, category, ratings, createdAt} = product
+const ProductCard = ({ product }) => {
+    const { name, image, brand, description, price, category, ratings, createdAt } = product
     return (
         <div>
             <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
-                    className="h-60 w-full"
+                        className="h-60 w-full"
                         src={image}
                         alt="ui/ux review check"
                     />
@@ -51,15 +51,15 @@ const ProductCard = ({product}) => {
                     <p className="block font-sans text-base border-t-2 font-light leading-relaxed text-gray-700 antialiased">
                         {description}
                     </p>
-                    <div className=" items-center justify-between flex mt-2">
-                       <h4 className="flex gap-1 items-center"> <TbCategory></TbCategory>Category: {category}</h4>
-                       <h4 className="flex gap-1 items-center"> <PiBrandy></PiBrandy> Brand: {brand}</h4>
-        
+                    <div className=" items-center text-sm justify-between flex mt-2">
+                        <h4 className="flex gap-1 items-center"> <TbCategory></TbCategory>Category: {category}</h4>
+                        <h4 className="flex gap-1 items-center"> <PiBrandy></PiBrandy> Brand: {brand}</h4>
+
 
                     </div>
-                    <div className=" items-center justify-between flex mt-2">
-                <h4 className="flex gap-1 items-center"><MdOutlineDateRange> </MdOutlineDateRange> Date: {`${createdAt?.slice(0,10)}`}</h4>
-                <h4 className="flex gap-1 items-center"><IoMdTimer> </IoMdTimer> Time:{`${createdAt?.slice(11,createdAt?.length)}`}</h4>
+                    <div className=" items-center text-sm justify-between flex mt-2">
+                        <h4 className="flex gap-1 items-center"><MdOutlineDateRange> </MdOutlineDateRange> Date: {`${createdAt?.slice(0, 10)}`}</h4>
+                        <h4 className="flex gap-1 items-center"><IoMdTimer> </IoMdTimer> Time:{`${createdAt?.slice(11, createdAt?.length)}`}</h4>
                     </div>
                 </div>
                 <div className="p-6 pt-3">
