@@ -39,19 +39,22 @@ const SignUp = () => {
     } catch (err) {
       console.log(err)
       toast.error(err.message)
+      setLoading(false)
     }
   }
 
   // handle google signin
   const handleGoogleSignIn = async () => {
     try {
+      setLoading(true)
       await signInWithGoogle()
-
+      
       navigate('/')
       toast.success('Signup Successful')
     } catch (err) {
       console.log(err)
       toast.error(err.message)
+      setLoading(false)
     }
   }
 

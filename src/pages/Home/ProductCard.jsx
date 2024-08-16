@@ -13,13 +13,13 @@ const ProductCard = ({ product }) => {
             <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
-                        className="h-60 w-full"
+                        className="h-56"
                         src={image}
                         alt="ui/ux review check"
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
                     <button
-                        className="!absolute top-4 right-4 h-12 text-2xl w-24 select-none rounded-full text-center align-middle font-sans font-medium uppercase text-white transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        className="!absolute top-4 right-4 h-12 text-2xl w-28 select-none rounded-full text-center align-middle font-sans font-medium uppercase text-white transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button"
                         data-ripple-dark="true"
                     >

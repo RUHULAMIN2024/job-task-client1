@@ -28,7 +28,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch(`https://pagination-server-eight.vercel.app/products?page=${currentPage}&size=${itemPerPage}&search=${search}&filter=${JSON.stringify(filter)}&sort=${JSON.stringify(sort)} `)
+        fetch(`http://localhost:5000/products?page=${currentPage}&size=${itemPerPage}&search=${search}&filter=${JSON.stringify(filter)}&sort=${JSON.stringify(sort)} `)
             .then(res => res.json())
             .then(data => {
                 setproducts(data?.data)

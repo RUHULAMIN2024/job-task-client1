@@ -17,10 +17,10 @@ const Filters = ({ setFilter }) => {
     };
 
     return (
-        <div className="grid bg-base-200 grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-3">
+        <div className="grid bg-base-100 grid-cols-2 md:grid-cols-5 border shadow-lg justify-center gap-5 items-end p-3">
             <div>
                 <label>Category:</label>
-                <select className=' select	input-secondary w-full max-w-xs mr-5' value={category} onChange={(e) => setCategory(e.target.value)}>
+                <select className=' select	border-pink-500 w-full max-w-xs mr-5' value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option value="">Select</option>
                     <option value="electronics"> electronics</option>
                     <option value="computers"> computers</option>
@@ -30,10 +30,13 @@ const Filters = ({ setFilter }) => {
             </div>
             <div>
                 <label>Brand:</label>
-                <select className=' select	input-secondary w-full max-w-xs mr-5' value={brand} onChange={(e) => setBrand(e.target.value)}>
+                <select className=' select	border-pink-500 w-full max-w-xs mr-5' value={brand} onChange={(e) => setBrand(e.target.value)}>
                     <option value="">Select</option>
                     <option value="Apple"> Apple</option>
                     <option value="Sony"> Sony </option>
+                    <option value="Canon"> Canon </option>
+                    <option value="HP"> HP </option>
+                    <option value="Asus"> Asus </option>
                     <option value="Dell"> Dell</option>
                     <option value="Samsung"> Samsung</option>
                     <option value="Nike"> Nike</option>
@@ -42,7 +45,7 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Min Price:</label>
                 <input
-                className='input	input-secondary w-full max-w-xs mr-5'
+                className='input	border-pink-500 w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Min Price"
                     value={minPrice}
@@ -52,14 +55,14 @@ const Filters = ({ setFilter }) => {
             <div>
                 <label>Max Price:</label>
                 <input
-                className='input	input-secondary w-full max-w-xs mr-5'
+                className='input	border-pink-500 w-full max-w-xs mr-5'
                     type="number"
                     placeholder="Max Price"
                     value={maxPrice}
                     onChange={(e) => setMaxPrice(e.target.value)}
                 />
             </div>
-            <button className='btn btn-md bg-secondary' onClick={handleFilter}>Apply Filters</button>
+            <button className='btn btn-md bg-pink-500' onClick={handleFilter}>Apply Filters</button>
         </div>
     );
 };
